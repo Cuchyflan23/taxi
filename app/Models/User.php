@@ -46,6 +46,6 @@ class User extends Authenticatable
 
     public function funcionario()
     {
-        return $this->hasOne(Funcionario::class, 'id_usuario');
+        return $this->hasOne(Funcionario::class, 'usuario_id');
     }
 }

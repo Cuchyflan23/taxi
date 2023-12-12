@@ -18,7 +18,7 @@ class Funcionario extends Model
         'correo',
         'cedulaJefe',
         'estado',
-        'usuario',
+        'usuario_id',
         'accesos',
         'cedulaJefeDepartamento',
         'fechaNombramiento',
@@ -33,7 +33,7 @@ class Funcionario extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'usuario');
+        return $this->belongsTo(User::class, 'usuario_id');
     }
 
 }

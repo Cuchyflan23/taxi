@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('correo');
             $table->string('cedulaJefe');
             $table->string('estado');
-            $table->string('id_usuario');
+            $table->unsignedBigInteger('usuario_id');
             $table->string('accesos');
             $table->string('cedulaJefeDepartamento');
             $table->date('fechaNombramiento');
@@ -31,7 +31,6 @@ return new class extends Migration
             $table->string('codigoPuesto');
             $table->string('genero');
             $table->string('relacionLaboral');
-            $table->foreign('id_usuario')->references('usuario')->on('users');
             $table->timestamps();
         });
     }

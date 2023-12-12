@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 Use App\Models\User;
 Use App\Models\Funcionario;
+use Illuminate\Support\Facades\DB;
 
 class CreaTicketController extends Controller
 {
@@ -31,12 +32,12 @@ class CreaTicketController extends Controller
 
     public function creaticket(){
 
-        $user = Funcionario::find(1);
-        $funcionario = $user->user;
+        $id = 141105;
+        $resultados = DB::select('SELECT departamento, nombres FROM funcionarios JOIN users ON funcionarios.usuario_id = users.usuario WHERE funcionarios.usuario_id = ?', [$id]);
 
-        return dd($funcionario);
+        //return $resultados;
 
-        return view('ticket_taxi.taxi');
+        return view('ticket_taxi.taxi', compact('resultados'));
     }
 
     /**

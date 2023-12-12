@@ -27,7 +27,10 @@
               </div>
               {{-- <div class="card-body"> --}}
                 <div class="form-group">
-                  <label>Departamento</label>
+                  @foreach ($resultados as $resultado)
+                      <p>{{ $resultado->departamento }}</p>
+                      <p>{{ $resultado->nombres }}</p>
+                  @endforeach
                   <input type="text" class="form-control">
                 </div>
                 

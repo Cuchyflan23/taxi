@@ -22,24 +22,27 @@
             <div class="card-body">
               <div class="form-group">
                 <label>Nombre del Funcionario</label>
-                <input type="text" class="form-control">
-                {{-- <input type="text" class="form-control" id="nombre" name="nombre" value="{{ $funcionario->nombre }}"> --}}
+                {{-- @foreach ($resultados as $resultado) --}}
+                
+                <input type="text" class="form-control" value="{{ $funcionario->nombres }}">
+                  
               </div>
               {{-- <div class="card-body"> --}}
                 <div class="form-group">
-                  @foreach ($resultados as $resultado)
+                  <label>Departamento</label>
+                  {{-- @foreach ($resultados as $resultado)
                       <p>{{ $resultado->departamento }}</p>
                       <p>{{ $resultado->nombres }}</p>
-                  @endforeach
-                  <input type="text" class="form-control">
+                  @endforeach --}}
+                  <input type="text" class="form-control" value="{{ $funcionario->departamento }}">
                 </div>
-                
+                {{-- @endforeach --}}
                 <div class="form-group">
                   <label>Origen</label>
                   <select class="form-control">
-                    <option>Option 1</option>
-                    <option>Option 2</option>
-                    <option>Option 3</option>
+                    <option>Taxímetro</option>
+                    <option>Recorrido</option>
+                    <option>Loja Ida o Retorno</option>
                   </select>
                 </div>
                 <div class="form-group">
@@ -52,7 +55,7 @@
                 </div>
 
                 <div class="form-group">
-                  <label>Date Time Picker</label>
+                  <label>Fecha y Hora</label>
                   <input type="text" class="form-control datetimepicker">
                 </div>
 

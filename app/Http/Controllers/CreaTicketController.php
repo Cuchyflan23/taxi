@@ -32,12 +32,16 @@ class CreaTicketController extends Controller
 
     public function creaticket(){
 
-        $id = 141105;
-        $resultados = DB::select('SELECT departamento, nombres FROM funcionarios JOIN users ON funcionarios.usuario_id = users.usuario WHERE funcionarios.usuario_id = ?', [$id]);
+        //$id = auth()->user()->usuario;
+        //$user = User::find(2);
+        //$funcionario = $user->funcionario;
+        $funcionario = auth()->user()->funcionario;
+        //$test = auth()->user()->funcionario();
+        //$resultados = DB::select('SELECT departamento, nombres FROM funcionarios JOIN users ON funcionarios.usuario_id = users.usuario WHERE funcionarios.usuario_id = ?', [$id]);
 
-        //return $resultados;
+        //return $funcionario;
 
-        return view('ticket_taxi.taxi', compact('resultados'));
+        return view('ticket_taxi.taxi', compact('funcionario'));
     }
 
     /**

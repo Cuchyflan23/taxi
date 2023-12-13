@@ -21,7 +21,8 @@ return new class extends Migration
             $table->string('correo');
             $table->string('cedulaJefe');
             $table->string('estado');
-            $table->unsignedBigInteger('usuario_id');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('accesos');
             $table->string('cedulaJefeDepartamento');
             $table->date('fechaNombramiento');
